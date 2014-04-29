@@ -1,5 +1,6 @@
 Restaurant.Table = DS.Model.extend({
-  number: DS.attr('integer'),
+  order: DS.hasMany('order'),
+  number: DS.attr('number'),
   isOccupied: DS.attr('boolean')
 });
 

@@ -5,23 +5,48 @@
     <title>Josh's Place</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-
-
   </head>
+
   <body>
+
     <h1>Welcome:</h1>
       <h2 class="welcome">Marty's Place!</h2>
 
+        <script type="text/x-handlebars" data-template-name="tables">
+          <div class="floatLeft">
+            <ul class="table-list">
+              {{#each}}
+                  <li>
+                    {{input type="checkbox" checked=isOccupied class="toggle"}}
+                    <button {{action "isOccupied"}} {{bind-attr class=":btn :btn-success :btn-lg :plate isOccupied:occupied"}}>Table: {{number}}</button>
+                  </li>
+                {{/each}}
+              </ul>
+              </div>
+              <div class="floatRight">
+                {{#link-to "foods"}}<h3>View Food</h3>{{/link-to}}
 
-    <script type="text/x-handlebars" data-template-name="tables">
-      <ul id="table-list">
-        {{#each}}
-          <li>
-            <button {{bind-attr class=":btn :btn-success :btn-lg :plate isOccupied:occupied"}} class="">Table: {{number}}</button>
-          </li>
-        {{/each}}
-      </ul>
-    </script>
+                {{outlet}}
+              </div>
+              <footer id="footer">
+              <span id="opentable-count">
+              <strong>{{remaining}}</strong> {{inflection}} available.
+              </span>
+             </footer>
+           </div>
+        </script>
+       <script type="text/x-handlebars" data-template-name="foods">
+        <div class="well">
+        <ul class="table-list">
+          {{#each}}
+            <li>
+              <h4>{{name}}</h4>
+            </li>
+          {{/each}}
+        </ul>
+        </div>
+      </script>
+
     <script src="js/libs/jquery-1.10.2.min.js"></script>
     <script src="js/libs/handlebars-1.3.0.js"></script>
     <script src="js/libs/ember.js"></script>
@@ -29,6 +54,9 @@
     <script src="js/application.js"></script>
     <script src="js/router.js"></script>
     <script src="js/models/table.js"></script>
-
+    <script src="js/models/order.js"></script>
+    <script src="js/models/food.js"></script>
+    <script src="js/controllers/tables_controller.js"></script>
+    <script src="js/controllers/orders_controller.js"></script>
   </body>
 </html>

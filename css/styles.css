@@ -1,4 +1,4 @@
-ul#table-list {
+ul.table-list {
   list-style-type: none;
   margin: 50px ;
 }
@@ -12,5 +12,25 @@ h2.welcome {
 }
 button.occupied {
   background-color: black;
+}
+
+#footer {
+  font-size: 25px;
+  margin-left: 5%;
+}
+
+.food-list {
+  float: left;
+  margin: 500px;
+}
+
+.floatRight {
+  float: right;
+  margin-right: 40%;
+
+}
+
+.floatLeft {
+  float: left;
 }
 
