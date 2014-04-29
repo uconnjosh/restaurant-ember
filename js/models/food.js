@@ -1,5 +1,5 @@
 Restaurant.Food = DS.Model.extend({
-  order: DS.belongsTo('table'),
+  order: DS.belongsTo('order'),
   name: DS.attr('string'),
   recipe: DS.attr('text'),
   price: DS.attr('number'),

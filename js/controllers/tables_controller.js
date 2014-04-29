@@ -3,6 +3,10 @@ Restaurant.TablesController = Ember.ArrayController.extend({
     isOccupied: function() {
       var occupied = this.filterBy('isOccupied', true);
     },
+    occupy: function(table) {
+      var occupiedStatus = table.get('isOccupied')
+      table.set('isOccupied', !occupiedStatus);
+    }
   },
   remaining: function() {
     return this.filterProperty('isOccupied', false).get('length');

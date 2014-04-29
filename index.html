@@ -17,8 +17,8 @@
             <ul class="table-list">
               {{#each}}
                   <li>
-                    {{input type="checkbox" checked=isOccupied class="toggle"}}
-                    <button {{action "isOccupied"}} {{bind-attr class=":btn :btn-success :btn-lg :plate isOccupied:occupied"}}>Table: {{number}}</button>
+
+                    <button {{action "occupy" this}} {{bind-attr class=":btn :btn-success :btn-lg :plate isOccupied:occupied"}}>Table: {{number}}</button>
                   </li>
                 {{/each}}
               </ul>
