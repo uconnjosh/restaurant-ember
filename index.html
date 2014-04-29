@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Josh's Place</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+
+  </head>
+  <body>
+    <h1>Welcome:</h1>
+      <h2 class="welcome">Marty's Place!</h2>
+
+
+    <script type="text/x-handlebars" data-template-name="tables">
+      <ul id="table-list">
+        {{#each}}
+          <li>
+            <button {{bind-attr class=":btn :btn-success :btn-lg :plate isOccupied:occupied"}} class="">Table: {{number}}</button>
+          </li>
+        {{/each}}
+      </ul>
+    </script>
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+    <script src="js/libs/handlebars-1.3.0.js"></script>
+    <script src="js/libs/ember.js"></script>
+    <script src="js/libs/ember-data.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/models/table.js"></script>
+
+  </body>
+</html>
